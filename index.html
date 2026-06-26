@@ -460,10 +460,10 @@ var PLS_RPC       = 'https://rpc.pulsechain.com';
 
 // Token pair addresses on PulseX (DexScreener pair addresses)
 var KEY_TOKENS = [
-  { symbol: 'HEX',  name: 'HEX',   pair: '0xf1f4d1e50f48d20609f6c3a48a15ee65d17dedd1' },
-  { symbol: 'PLSX', name: 'PulseX', pair: '0x6753560538eca67617a9ce605178f788be7e524e' },
-  { symbol: 'INC',  name: 'Incentive', pair: '0xf808bb6265e9ca27002c0a04562bf50d4fe37eaa' },
-  { symbol: 'pDAI', name: 'pDAI',   pair: '0xe56043671df55de5cdf8459710433c10324de0ae' }
+  { symbol: 'HEX',  name: 'HEX',      pair: '0xf1f4ee610b2babb05c635f726ef8b0c568c8dc65' },
+  { symbol: 'PLSX', name: 'PulseX',   pair: '0x6753560538eca67617a9ce605178f788be7e524e' },
+  { symbol: 'INC',  name: 'Incentive',pair: '0xf808bb6265e9ca27002c0a04562bf50d4fe37eaa' },
+  { symbol: 'eHEX', name: 'eHEX',     pair: '0xf0ea3efe42c11c8819948ec2d3179f4084863d3f' }
 ];
 
 var gainersData = [];
@@ -675,7 +675,7 @@ function fetchTokens() {
 // ── FETCH MOVERS ──
 function fetchMovers() {
   // Search top PulseChain pairs by volume
-  abortFetch(DEXSCREENER + '/search?q=pulsechain')
+  abortFetch(DEXSCREENER + '/search?q=WPLS')
     .then(function(r) { return r.json(); })
     .then(function(d) {
       if (!d.pairs) return;
